@@ -18,7 +18,6 @@ namespace Unity.Netcode.Samples
         [ServerRpc]
         public void RandomTeleportServerRpc()
         {
-            Debug.Log("random teleport");
             var oldPosition = transform.position;
             transform.position = GetRandomPositionOnXYPlane();
             var newPosition = transform.position;
@@ -28,12 +27,6 @@ namespace Unity.Netcode.Samples
         private static Vector3 GetRandomPositionOnXYPlane()
         {
             return new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f), 0f);
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space) && IsOwner)
-                RandomTeleportServerRpc();
         }
     }
 }

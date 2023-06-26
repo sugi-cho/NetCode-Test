@@ -41,7 +41,7 @@ public class Test : NetworkBehaviour
     }
 
     [System.Serializable]
-    public struct Data
+    public struct Data : INetworkSerializeByMemcpy
     {
         public int val0;
         public int val1;
